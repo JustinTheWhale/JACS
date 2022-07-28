@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if IE 9]>					<html class="ie9 no-js" lang="en">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Open+Sans:400,600,700|Oswald|Electrolize' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<title>JACS | All Listings</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<link rel="shortcut" href="static/images/favicon.ico" />
+	<link rel="stylesheet" href="static/css/style.css" media="screen" />
+	<link rel="stylesheet" href="static/css/skeleton.css" media="screen" />
+	<link rel="stylesheet" href="static/fancybox/jquery.fancybox.css" media="screen" />
+
+	<!-- HTML5 Shiv + detect touch events -->
+	<script type="text/javascript" src="static/js/modernizr.custom.js"></script>
+</head>
+<body class="menu-1 h-style-1 text-1">
+
+<div class="wrap">
+	
+	<!-- - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - -->	
+	
+	<header id="header" class="clearfix">
+		
+		<a href="/" id="logo"><img src="static/images/logo.png" alt="Car Dealer"></a>
+		
+		<div class="widget-container widget_search">
+			
+			<span class="call"><span>+1 234</span> 567-8901</span><br />
+			
+			<span class="adds">12 Street, Los Angeles, CA, 94101</span>
+
+		</div><!--/ .widget-container-->		
+		
+		<nav id="navigation" class="navigation">
+			
+			<ul>
+				<li class="current-menu-item"><a href="/">Home</a></li>
+				<li><a href="all-listings.html">Browse By</a>
+					<ul>
+						<li><a href="all-listings.html">All Listings</a></li>
+						
+					</ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="test-drive.html">Schedule Test Drive</a></li>
+			</ul>
+			
+		</nav><!--/ #navigation-->
+		
+	</header><!--/ #header-->
+	
+	<!-- - - - - - - - - - - - - - end Header - - - - - - - - - - - - - - - - -->	
+	
+	
+	<div class="main">
+
+		<!-- - - - - - - - - - - - - - - Container - - - - - - - - - - - - - - - - -->	
+
+		<section class="container sbl clearfix">
+
+			<!-- - - - - - - - - - - - - - - Content - - - - - - - - - - - - - - - - -->		
+
+			<section id="content" class="two-thirds column">
+				
+				<div class="page-header clearfix">
+
+					<h3 class="section-title">All Listings</h3>
+
+				</div><!--/ .page-header-->
+
+				<section id="change-items" class="item-list">
+					{% for i in range(0, len) %}
+					<article>
+                        <a href="{{ listings[i].media.product_link }}" class="single-image picture">
+                            <img src="{{ listings[i].media.main_thumbnail }}" alt="">
+                        </a>
+
+                        <div class="detailed">
+
+                            <h6 class="title-item">
+                                <a href="{{ listings[i].media.product_link }}">{{ listings[i].year }} {{ listings[i].make }} {{listings[i].model }}</a>
+                            </h6>
+
+                            <span class="price">${{ listings[i].price }}</span>
+
+                            <div class="clear"></div>
+
+                            <ul class="list-entry">
+                                <li><b class="label">Engine:</b><span>{{ listings[i].specs.engine }}</span></li>
+                                <li><b class="label">Mileage:</b><span>{{ listings[i].mileage }} miles</span></li>
+                                <li><b class="label">Location:</b><span>{{ listings[i].loc_state }}, {{ listings[i].loc_city }}</span></li>
+                            </ul><!--/ .list-entry-->
+
+                            <a href="{{ listings[i].media.product_link }}" class="button orange">Details</a>
+
+                        </div><!--/ .detailed-->
+
+					</article>
+					{% endfor %}
+
+				</section><!--/ #change-items-->	
+
+			</section><!--/ #content-->
+
+
+			<!-- - - - - - - - - - - - - - end Content - - - - - - - - - - - - - - - - -->	
+
+
+			<!-- - - - - - - - - - - - - - - Sidebar - - - - - - - - - - - - - - - - -->	
+
+			<aside id="sidebar" class="one-third column">
+				
+				<div class="widget-container widget_latest">
+					
+					<h3 class="widget-title">Latest Cars</h3>
+					
+					<ul>
+						<li>
+							<a class="thumb single-image picture video" href="one-products.html"><img src="static/images/temp/latest-thumb-1.jpg" alt="" /></a>
+							<div class="latest-entry">
+								<a href="one-products.html" class="block"><b>Acura RDX FWD</b></a>
+								<span class="block add-margin">2018, 29,549 Miles</span>
+								<a href="one-products.html" class="bold text-orange">$23,899</a>	
+							</div><!--/ .latest-entry-->
+						</li>
+						<li>
+							<a class="thumb single-image picture" href="one-products.html"><img src="static/images/temp/latest-thumb-2.jpg" alt="" /></a>
+							<div class="latest-entry">
+								<a href="one-products.html" class="block"><b>Audi A3</b></a>
+								<span class="block add-margin">2016, 32,343 Miles</span>
+								<a href="one-products.html" class="bold text-orange">$29,799</a>	
+							</div><!--/ .latest-entry-->
+						</li>
+						<li>
+							<a class="thumb single-image picture video" href="one-products.html"><img src="static/images/temp/latest-thumb-3.jpg" alt="" /></a>
+							<div class="latest-entry">
+								<a href="one-products.html" class="block"><b>2019 Buick Enclave Essense</b></a>
+								<span class="block add-margin">2019, 34,356 Miles</span>
+								<a href="one-products.html" class="bold text-orange">$23,399</a>	
+							</div><!--/ .latest-entry-->
+						</li>
+					</ul>
+					
+					
+				</div><!--/ .widget-container-->
+
+			</aside><!--/ #sidebar-->
+
+			<!-- - - - - - - - - - - - - end Sidebar - - - - - - - - - - - - - - - - -->
+
+		</section><!--/.container -->
+
+		<!-- - - - - - - - - - - - - end Container - - - - - - - - - - - - - - - - -->			
+		
+	</div><!--/ .main-->
+
+	
+	<!-- - - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->	
+	
+	<footer id="footer" class="container clearfix">
+		
+		<section class="container clearfix">
+			
+			<div class="four columns">
+
+				<div class="widget-container widget_text">
+
+					<h3 class="widget-title">About Us</h3>
+
+					<div class="textwidget">
+
+						<p class="white">
+							“We work diligently to bring the highest quality at the lowest price on 
+							the internet and strongest financing options in the industry.”
+						</p>	
+
+						<p>
+							Building a relationship is important, whether it’s with a customer, vendors, or lenders, which is what we
+							focus on. We aren’t interested in just making the sale today and never seeing you again – we want to
+							ensure that you are so happy, that not only do you come back, but you’ll refer your friends and families
+							to us as well , with over 100K satisfied customers and growing. 
+						</p>	
+
+					</div><!--/ .textwidget-->
+
+				</div><!--/ .widget-container-->	
+
+			</div><!--/ .four .columns-->
+
+			<div class="four columns">
+
+				<div class="widget-container widget_text">
+
+					<h3 class="widget-title">Our Hours</h3>
+
+					<div class="textwidget">
+
+						<ul class="hours">
+
+							<li>Monday <span>8 am to 7 pm</span></li>
+							<li>Tuesday <span>8 am to 9 pm</span></li>
+							<li>Wednesday <span>8 am to 9 pm</span></li>
+							<li>Thursday <span>8 am to 9 pm</span></li>
+							<li>Friday <span>8 am to 9 pm</span></li>
+							<li>Saturday <span>8 am to 9 pm</span></li>
+							<li>Sunday <span>Closed</span></li>
+
+						</ul><!--/ .hours-->
+
+					</div><!--/ .textwidget-->
+
+				</div><!--/ .widget-container-->
+
+			</div><!--/ .four .columns-->
+
+			<div class="four columns">
+
+				<div class="widget-container widget_contacts">
+
+					<h3 class="widget-title">Our Contacts</h3>			
+
+					<ul class="our-contacts">
+
+						<li class="address">
+							<b>Address Info:</b>
+							<p> 12 Street, Los Angeles, CA, 94101 Search </p>
+						</li>
+						<li class="phone">
+							<b>Phone:</b>&nbsp;<span>+1 234 567-8901</span> <br />
+						</li>
+						<li>
+							<b>Email: <a href="mailto:testmail@sitename.com">support@jacs.com</a></b>
+						</li>
+
+					</ul><!--/ .our-contacts-->
+
+				</div><!--/ .widget-container-->
+
+			</div><!--/ .four .columns-->
+			
+			<div class="adjective clearfix">
+
+				<p class="developed">Developed by JACS Team</a></p>
+				
+			</div><!--/ .adjective-->
+
+		</section><!--/ .container-->
+		
+	</footer><!--/ #footer-->
+	
+	<!-- - - - - - - - - - - - - - - end Footer - - - - - - - - - - - - - - - - -->			
+	
+</div><!--/ .wrap-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="static/js/jquery-1.7.2.min.js"><\/script>')</script>
+<script src="static/js/custom.js"></script>
+</body>
+</html>
