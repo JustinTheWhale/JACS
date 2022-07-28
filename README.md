@@ -13,3 +13,7 @@
 ### _*Using Docker*_
 * #### ```docker image build -t JACS_app .```
 * #### ```docker run -p 5000:5000 -d JACS_app .```
+
+## Example
+<img src="examples/example1.png">
+<img src="examples/example2.png">
